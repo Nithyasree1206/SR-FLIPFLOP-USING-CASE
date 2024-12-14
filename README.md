@@ -49,32 +49,38 @@ For different input combinations generate the timing diagram.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by:S.NITHYASREE 
+RegisterNumber:24900149
 */
-module lab6(s,r,clk,q,qbar);
-input s,r,clk;
-output reg q;
-output reg qbar;
-initial 
-begin
-q=0;
-qbar=1;
-end
-always @(posedge clk)
-begin
-   q=s|(~r&q);
-   qbar=r|(~s&~q);
-end
+module digital6 (s, r, clk, rst, q);
+  input s, r, clk, rst;
+  output reg q;
+
+  always @(posedge clk or posedge rst)
+ begin
+    if (rst)
+      q <= 0; 
+    else
+ begin
+      case ({s, r}) 
+        2'b00: q <= q;    
+        2'b01: q <= 0;    
+        2'b10: q <= 1;    
+        2'b11: q <= 0;    
+      endcase
+    end
+  end
 endmodule
-<img width="699" alt="image" src="https://github.com/user-attachments/assets/0f8c4522-730a-40e8-ab1b-619e9c8eff47">
+![image](https://github.com/user-attachments/assets/26869ad3-5dd1-4e54-b175-08ebbd131aff)
 
 **RTL LOGIC FOR FLIPFLOPS**
-<img width="719" alt="SR LG" src="https://github.com/user-attachments/assets/56c61639-8690-4f10-9163-1c6cfd67ded3">
-
+![sr lg](https://github.com/user-attachments/assets/f4d1f806-0cfd-4f83-9b7b-e327aada154c)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-<img width="953" alt="SR wf" src="https://github.com/user-attachments/assets/3efa77f9-793f-478b-ab3e-e9b33feb2ee4">
+
+![wf6](https://github.com/user-attachments/assets/2c808678-8f2d-4c72-b2b5-afa44647267b)
 
 
 **RESULTS**
-Therefore FLIP FLOPS In always @ method uisng verilog and validating their functionally using their functional tables is verify.
+Therefore SR flip flops In always @ method uisng verilog and validating their functionally using their functional tables is verify.
