@@ -53,6 +53,8 @@ For different input combinations generate the timing diagram.
 Developed by:S.NITHYASREE 
 RegisterNumber:24900149
 */
+````
+
 module digital6 (s, r, clk, rst, q);
   input s, r, clk, rst;
   output reg q;
@@ -72,6 +74,11 @@ module digital6 (s, r, clk, rst, q);
     end
   end
 endmodule
+`````
+
+Developed by:S.NITHYASREE 
+RegisterNumber:24900149
+*/
 ![image](https://github.com/user-attachments/assets/26869ad3-5dd1-4e54-b175-08ebbd131aff)
 
 **RTL LOGIC FOR FLIPFLOPS**
